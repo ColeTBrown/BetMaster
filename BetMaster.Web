@@ -1,0 +1,746 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>BetMaster — Take Back Control</title>
+  <meta name="description" content="BetMaster helps bettors regain control with smart spending limits, urge tracking, and real-time insights." />
+  <link rel="icon" href="data:," />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <header class="header">
+    <nav class="nav">
+      <a class="brand" href="#top" aria-label="BetMaster Home">
+        <span class="brand-mark">BM</span>
+        <span class="brand-name">BetMaster</span>
+      </a>
+
+      <div class="nav-links">
+        <a href="#features">Features</a>
+        <a href="#how">How it works</a>
+        <a href="#privacy">Privacy</a>
+        <a href="#faq">FAQ</a>
+      </div>
+
+      <a class="btn btn-small" href="#waitlist">Join waitlist</a>
+    </nav>
+
+    <div class="hero" id="top">
+      <div class="hero-copy">
+        <p class="eyebrow">A harm-reduction app for bettors</p>
+        <h1>Take back control of your betting — without judgment.</h1>
+        <p class="subhead">
+          BetMaster helps you spot spending patterns, track urges (dopamine spikes), and set smart limits
+          so you can make choices you’re proud of.
+        </p>
+
+        <div class="cta-row">
+          <a class="btn" href="#waitlist">Get early access</a>
+          <a class="btn btn-ghost" href="#demo">See what it does</a>
+        </div>
+
+        <div class="trust">
+          <div class="pill">Limit alerts</div>
+          <div class="pill">Urge tracking</div>
+          <div class="pill">Spending insights</div>
+          <div class="pill">Privacy-first</div>
+        </div>
+      </div>
+
+      <div class="hero-card" id="demo" aria-label="Product preview">
+        <div class="phone">
+          <div class="phone-top">
+            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+          </div>
+
+          <div class="screen">
+            <div class="screen-header">
+              <div>
+                <p class="screen-title">Today</p>
+                <p class="screen-sub">You’re trending safer this week</p>
+              </div>
+              <div class="badge" id="riskBadge">LOW</div>
+            </div>
+
+            <div class="grid">
+              <div class="tile">
+                <p class="k">Spent</p>
+                <p class="v" id="spentToday">$42</p>
+                <p class="s">Daily budget: <span id="budgetToday">$75</span></p>
+              </div>
+              <div class="tile">
+                <p class="k">Urge level</p>
+                <p class="v" id="urgeLevel">3/10</p>
+                <p class="s">Last check-in: 2h ago</p>
+              </div>
+              <div class="tile">
+                <p class="k">Most common trigger</p>
+                <p class="v" id="topTrigger">Boredom</p>
+                <p class="s">Try a 5-min reset</p>
+              </div>
+              <div class="tile">
+                <p class="k">Streak</p>
+                <p class="v" id="streak">4 days</p>
+                <p class="s">Under budget</p>
+              </div>
+            </div>
+
+            <div class="mini">
+              <p class="mini-title">Quick tools</p>
+              <div class="mini-actions">
+                <button class="mini-btn" id="cooldownBtn">Start 10-min cooldown</button>
+                <button class="mini-btn mini-btn-ghost" id="checkinBtn">Log urge check-in</button>
+              </div>
+              <p class="mini-note" id="miniNote">Tap “cooldown” when you feel impulsive.</p>
+            </div>
+          </div>
+        </div>
+
+        <p class="caption">
+          Prototype preview — the app turns your habits into simple, actionable signals.
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" id="features">
+      <div class="section-head">
+        <h2>Built to reduce harm, not to shame.</h2>
+        <p>
+          BetMaster focuses on awareness, limits, and replacement behaviors — so you can interrupt impulse cycles
+          and build healthier routines.
+        </p>
+      </div>
+
+      <div class="cards">
+        <article class="card">
+          <h3>Spending guardrails</h3>
+          <p>Set daily/weekly budgets. Get alerts before you cross your limit — not after.</p>
+          <ul>
+            <li>Daily & weekly budgets</li>
+            <li>Limit warnings + “pause” suggestion</li>
+            <li>Simple summaries you’ll actually read</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>“Dopamine spike” tracking</h3>
+          <p>
+            Track urges and triggers as a proxy for dopamine spikes (self-report). Over time you’ll see patterns.
+          </p>
+          <ul>
+            <li>Urge level (1–10)</li>
+            <li>Mood + trigger tags (stress, boredom, social)</li>
+            <li>Trend insights + safer alternatives</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>Pattern insights</h3>
+          <p>See when and why you’re most likely to overspend, then get a personalized plan.</p>
+          <ul>
+            <li>Highest-risk times of day</li>
+            <li>Top triggers & streak tracking</li>
+            <li>Weekly recap you can share</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>Cooldown + reset tools</h3>
+          <p>When cravings hit, a short reset can break the loop. BetMaster makes it one tap.</p>
+          <ul>
+            <li>10-minute cooldown timer</li>
+            <li>Breathing + quick prompts</li>
+            <li>“If-then” coping plan</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section alt" id="how">
+      <div class="two-col">
+        <div>
+          <h2>How it works</h2>
+          <p class="lead">
+            BetMaster transforms your logs into a simple “risk signal” and gives you tools to act before you overspend.
+          </p>
+
+          <ol class="steps">
+            <li><span class="step-n">1</span><div><b>Log spending</b><br/>Add bets and deposits (quick entry).</div></li>
+            <li><span class="step-n">2</span><div><b>Check in urges</b><br/>Rate urges + triggers (30 seconds).</div></li>
+            <li><span class="step-n">3</span><div><b>See patterns</b><br/>Identify high-risk times and triggers.</div></li>
+            <li><span class="step-n">4</span><div><b>Use guardrails</b><br/>Budgets + cooldowns + safer swaps.</div></li>
+          </ol>
+        </div>
+
+        <div class="panel">
+          <h3>Example “Risk Signal”</h3>
+          <p class="muted">Based on your recent spending + urge intensity + trigger frequency.</p>
+
+          <div class="meter" role="img" aria-label="Risk meter">
+            <div class="meter-bar">
+              <div class="meter-fill" id="riskFill" style="width: 22%;"></div>
+            </div>
+            <div class="meter-row">
+              <span>LOW</span><span>MED</span><span>HIGH</span>
+            </div>
+          </div>
+
+          <div class="callout">
+            <p><b>When risk rises:</b> BetMaster recommends a cooldown, a coping plan prompt, or a budget reset.</p>
+          </div>
+
+          <p class="tiny">
+            * This is not a medical device. BetMaster is a self-management tool and can’t diagnose addiction.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="privacy">
+      <div class="section-head">
+        <h2>Privacy-first by design</h2>
+        <p>
+          Your data should stay yours. The MVP can run entirely locally (on-device) with optional backups later.
+        </p>
+      </div>
+
+      <div class="privacy-grid">
+        <div class="privacy-item">
+          <h3>Local storage</h3>
+          <p>Keep logs on your device for the prototype demo.</p>
+        </div>
+        <div class="privacy-item">
+          <h3>No public sharing</h3>
+          <p>No leaderboards. No pressure. No social comparison.</p>
+        </div>
+        <div class="privacy-item">
+          <h3>Export when you want</h3>
+          <p>Option to export a weekly recap for yourself (or a counselor).</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="waitlist">
+      <div class="waitlist">
+        <div>
+          <h2>Join the waitlist</h2>
+          <p class="lead">
+            We’re launching a small beta. Drop your email and we’ll reach out when BetMaster is ready.
+          </p>
+        </div>
+
+        <form class="form" id="waitlistForm" autocomplete="on">
+          <label class="sr-only" for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="you@school.edu" required />
+          <button class="btn" type="submit">Request access</button>
+          <p class="form-note" id="formNote">No spam — only beta updates.</p>
+        </form>
+
+        <div class="fineprint">
+          <p><b>If you’re in immediate distress:</b> consider reaching out to a trusted person or a local support line.</p>
+          <p class="tiny">This site is informational and not medical advice.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="section-head">
+        <h2>FAQ</h2>
+        <p>Quick answers for class + early testers.</p>
+      </div>
+
+      <div class="faq">
+        <details>
+          <summary>Is BetMaster only for sports betting?</summary>
+          <p>No — it’s designed for any type of gambling where spending can get out of control.</p>
+        </details>
+        <details>
+          <summary>How do you track “dopamine spikes”?</summary>
+          <p>
+            The MVP uses a self-report proxy: urge intensity (1–10), mood, triggers, and timing. Over time,
+            patterns appear and the app suggests interventions.
+          </p>
+        </details>
+        <details>
+          <summary>Do you store my data?</summary>
+          <p>For the prototype, everything can remain local. Future versions may add opt-in secure backups.</p>
+        </details>
+        <details>
+          <summary>Is this a replacement for therapy?</summary>
+          <p>No — it’s a self-management tool. If gambling is harming your life, professional support can help.</p>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>
+        <p class="brand-footer"><span class="brand-mark">BM</span> BetMaster</p>
+        <p class="tiny">© <span id="year"></span> BetMaster. All rights reserved.</p>
+      </div>
+
+      <div class="footer-links">
+        <a href="#privacy">Privacy</a>
+        <a href="#waitlist">Waitlist</a>
+        <a href="#top">Back to top</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+:root{
+  --bg:#0b0f17;
+  --panel:#0f172a;
+  --card:#111c33;
+  --text:#eaf0ff;
+  --muted:#b9c4e2;
+  --line:rgba(255,255,255,.08);
+  --accent:#6ee7ff;
+  --accent2:#a78bfa;
+  --good:#34d399;
+  --warn:#fbbf24;
+  --bad:#fb7185;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+  background: radial-gradient(1200px 800px at 20% 0%, rgba(110,231,255,.10), transparent 55%),
+              radial-gradient(1200px 800px at 80% 10%, rgba(167,139,250,.12), transparent 55%),
+              var(--bg);
+  color:var(--text);
+  line-height:1.5;
+}
+
+a{color:inherit;text-decoration:none}
+.section{padding:72px 20px; max-width:1100px; margin:0 auto;}
+.section.alt{border-top:1px solid var(--line); border-bottom:1px solid var(--line); background: rgba(255,255,255,.02);}
+.section-head{max-width:780px; margin:0 auto 28px;}
+.section-head h2{font-size:34px; margin:0 0 10px;}
+.section-head p{margin:0;color:var(--muted);}
+
+.header{
+  padding:22px 20px 48px;
+  max-width:1100px;
+  margin:0 auto;
+}
+
+.nav{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+}
+
+.brand{display:flex; align-items:center; gap:10px; font-weight:700;}
+.brand-mark{
+  display:inline-flex;
+  width:34px;height:34px;
+  border-radius:10px;
+  align-items:center;justify-content:center;
+  background: linear-gradient(135deg, rgba(110,231,255,.25), rgba(167,139,250,.25));
+  border:1px solid var(--line);
+}
+.brand-name{letter-spacing:.2px}
+
+.nav-links{display:flex; gap:18px; color:var(--muted);}
+.nav-links a{padding:8px 10px; border-radius:10px;}
+.nav-links a:hover{background:rgba(255,255,255,.04); color:var(--text);}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:12px 16px;
+  border-radius:14px;
+  background:linear-gradient(135deg, rgba(110,231,255,.18), rgba(167,139,250,.18));
+  border:1px solid var(--line);
+  color:var(--text);
+  font-weight:700;
+  cursor:pointer;
+  transition: transform .12s ease, background .12s ease;
+}
+.btn:hover{transform: translateY(-1px);}
+.btn:active{transform: translateY(0);}
+.btn-small{padding:10px 12px; border-radius:12px; font-weight:700;}
+.btn-ghost{
+  background:transparent;
+  border:1px solid var(--line);
+  color:var(--text);
+}
+.btn-ghost:hover{background:rgba(255,255,255,.04);}
+
+.hero{
+  display:grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap:28px;
+  padding-top:42px;
+  align-items:start;
+}
+
+.eyebrow{
+  display:inline-flex;
+  padding:6px 10px;
+  border:1px solid var(--line);
+  background:rgba(255,255,255,.03);
+  border-radius:999px;
+  color:var(--muted);
+  margin:0 0 14px;
+  font-size:13px;
+}
+.hero-copy h1{font-size:44px; line-height:1.08; margin:0 0 12px;}
+.subhead{color:var(--muted); margin:0 0 18px; font-size:16.5px;}
+.cta-row{display:flex; gap:10px; flex-wrap:wrap; margin-bottom:14px;}
+
+.trust{display:flex; flex-wrap:wrap; gap:10px; margin-top:8px;}
+.pill{
+  font-size:12.5px;
+  padding:8px 10px;
+  border-radius:999px;
+  border:1px solid var(--line);
+  color:var(--muted);
+  background:rgba(255,255,255,.02);
+}
+
+.hero-card{
+  border:1px solid var(--line);
+  background: rgba(255,255,255,.03);
+  border-radius:20px;
+  padding:18px;
+  box-shadow: 0 18px 60px rgba(0,0,0,.35);
+}
+
+.phone{
+  border-radius:22px;
+  border:1px solid var(--line);
+  background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+  overflow:hidden;
+}
+.phone-top{
+  display:flex; gap:7px;
+  padding:10px 12px;
+  border-bottom:1px solid var(--line);
+}
+.dot{
+  width:10px; height:10px;
+  border-radius:999px;
+  background: rgba(255,255,255,.18);
+}
+.screen{padding:14px;}
+.screen-header{display:flex; justify-content:space-between; align-items:flex-start; gap:10px;}
+.screen-title{margin:0; font-weight:800;}
+.screen-sub{margin:2px 0 0; color:var(--muted); font-size:13px;}
+.badge{
+  font-weight:900;
+  padding:8px 10px;
+  border-radius:999px;
+  border:1px solid var(--line);
+  background:rgba(52,211,153,.12);
+  color:var(--good);
+}
+
+.grid{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:10px;
+  margin-top:12px;
+}
+.tile{
+  border:1px solid var(--line);
+  background: rgba(15,23,42,.45);
+  border-radius:16px;
+  padding:12px;
+}
+.k{margin:0;color:var(--muted);font-size:12px;}
+.v{margin:4px 0 0;font-size:20px;font-weight:900;}
+.s{margin:2px 0 0;color:var(--muted);font-size:12px;}
+
+.mini{
+  margin-top:12px;
+  border-top:1px solid var(--line);
+  padding-top:12px;
+}
+.mini-title{margin:0 0 8px;font-weight:800;}
+.mini-actions{display:flex; gap:10px; flex-wrap:wrap;}
+.mini-btn{
+  width:auto;
+  padding:10px 12px;
+  border-radius:14px;
+  border:1px solid var(--line);
+  background: rgba(255,255,255,.04);
+  color:var(--text);
+  cursor:pointer;
+  font-weight:700;
+}
+.mini-btn:hover{background: rgba(255,255,255,.06);}
+.mini-btn-ghost{background:transparent;}
+.mini-note{margin:8px 0 0;color:var(--muted);font-size:12.5px;}
+.caption{margin:10px 2px 0; color:var(--muted); font-size:12.5px;}
+
+.cards{
+  display:grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap:14px;
+  margin-top:18px;
+}
+.card{
+  border:1px solid var(--line);
+  background: rgba(17,28,51,.55);
+  border-radius:18px;
+  padding:16px;
+}
+.card h3{margin:0 0 8px;}
+.card p{margin:0 0 10px;color:var(--muted);}
+.card ul{margin:0; padding-left:18px; color:var(--muted);}
+.card li{margin:6px 0;}
+
+.two-col{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:18px;
+  align-items:start;
+}
+.lead{color:var(--muted); margin:0 0 14px;}
+.steps{margin:18px 0 0; padding:0; list-style:none; display:flex; flex-direction:column; gap:12px;}
+.steps li{display:flex; gap:12px; align-items:flex-start;}
+.step-n{
+  width:28px;height:28px; border-radius:10px;
+  display:inline-flex; align-items:center; justify-content:center;
+  border:1px solid var(--line);
+  background:rgba(255,255,255,.03);
+  font-weight:900;
+}
+
+.panel{
+  border:1px solid var(--line);
+  background: rgba(15,23,42,.45);
+  border-radius:18px;
+  padding:16px;
+}
+.panel h3{margin:0 0 6px;}
+.muted{color:var(--muted); margin:0 0 12px;}
+.meter{margin-top:12px;}
+.meter-bar{
+  height:14px;
+  border-radius:999px;
+  border:1px solid var(--line);
+  background: rgba(255,255,255,.03);
+  overflow:hidden;
+}
+.meter-fill{
+  height:100%;
+  border-radius:999px;
+  background: linear-gradient(90deg, rgba(52,211,153,.7), rgba(251,191,36,.65), rgba(251,113,133,.65));
+}
+.meter-row{
+  display:flex; justify-content:space-between;
+  margin-top:6px; color:var(--muted); font-size:12px;
+}
+.callout{
+  margin-top:12px;
+  border:1px solid var(--line);
+  background: rgba(255,255,255,.03);
+  padding:12px;
+  border-radius:16px;
+}
+.tiny{color:var(--muted); font-size:12px; margin:12px 0 0;}
+
+.privacy-grid{
+  display:grid;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  gap:14px;
+  margin-top:18px;
+}
+.privacy-item{
+  border:1px solid var(--line);
+  background: rgba(17,28,51,.45);
+  border-radius:18px;
+  padding:16px;
+}
+.privacy-item h3{margin:0 0 6px;}
+.privacy-item p{margin:0;color:var(--muted);}
+
+.waitlist{
+  border:1px solid var(--line);
+  background: rgba(17,28,51,.5);
+  border-radius:22px;
+  padding:18px;
+  max-width:900px;
+  margin:0 auto;
+}
+.form{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top:12px;
+}
+input{
+  flex:1;
+  min-width: 220px;
+  padding:12px 14px;
+  border-radius:14px;
+  border:1px solid var(--line);
+  background: rgba(0,0,0,.18);
+  color:var(--text);
+  outline:none;
+}
+input::placeholder{color: rgba(185,196,226,.75);}
+.form-note{margin:8px 0 0;color:var(--muted); font-size:12.5px;}
+.fineprint{margin-top:16px; color:var(--muted);}
+.sr-only{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;}
+
+.faq{
+  max-width:900px;
+  margin: 0 auto;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+details{
+  border:1px solid var(--line);
+  background: rgba(17,28,51,.45);
+  border-radius:18px;
+  padding:14px 16px;
+}
+summary{cursor:pointer; font-weight:800;}
+details p{margin:10px 0 0;color:var(--muted);}
+
+.footer{
+  padding:34px 20px 60px;
+  border-top:1px solid var(--line);
+  max-width:1100px;
+  margin:0 auto;
+}
+.footer-inner{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:18px;
+}
+.brand-footer{margin:0 0 6px; font-weight:900; display:flex; align-items:center; gap:10px;}
+.footer-links{display:flex; gap:14px; color:var(--muted);}
+.footer-links a:hover{color:var(--text);}
+
+@media (max-width: 920px){
+  .hero{grid-template-columns: 1fr; }
+  .nav-links{display:none;}
+  .cards{grid-template-columns: 1fr;}
+  .two-col{grid-template-columns: 1fr;}
+  .privacy-grid{grid-template-columns: 1fr;}
+  .hero-copy h1{font-size:38px;}
+}const $ = (id) => document.getElementById(id);
+
+function clamp(n, min, max) {
+  return Math.max(min, Math.min(max, n));
+}
+
+// Demo-only: fake “today” stats that change slightly on refresh.
+function seedDemo() {
+  const spent = Math.round(10 + Math.random() * 120);
+  const budget = 75;
+  const urge = Math.round(1 + Math.random() * 9);
+
+  const triggers = ["Boredom", "Stress", "After a win", "Late-night scrolling", "Social pressure"];
+  const topTrigger = triggers[Math.floor(Math.random() * triggers.length)];
+
+  const streak = Math.round(1 + Math.random() * 9);
+
+  $("spentToday").textContent = `$${spent}`;
+  $("budgetToday").textContent = `$${budget}`;
+  $("urgeLevel").textContent = `${urge}/10`;
+  $("topTrigger").textContent = topTrigger;
+  $("streak").textContent = `${streak} days`;
+
+  // Simple risk score for the landing page demo:
+  // spending weight + urge weight + "late night" trigger bump (proxy)
+  let risk = (spent / budget) * 40 + (urge / 10) * 50;
+  if (topTrigger.toLowerCase().includes("late")) risk += 12;
+
+  risk = clamp(Math.round(risk), 5, 95);
+  $("riskFill").style.width = `${risk}%`;
+
+  const badge = $("riskBadge");
+  badge.textContent = risk < 35 ? "LOW" : risk < 70 ? "MED" : "HIGH";
+
+  // Badge colors (no CSS variables changed; just classes by inline style)
+  if (risk < 35) {
+    badge.style.color = "var(--good)";
+    badge.style.background = "rgba(52,211,153,.12)";
+  } else if (risk < 70) {
+    badge.style.color = "var(--warn)";
+    badge.style.background = "rgba(251,191,36,.12)";
+  } else {
+    badge.style.color = "var(--bad)";
+    badge.style.background = "rgba(251,113,133,.12)";
+  }
+}
+
+function setupInteractions() {
+  const note = $("miniNote");
+  const cooldownBtn = $("cooldownBtn");
+  const checkinBtn = $("checkinBtn");
+
+  let cooldownActive = false;
+  let remaining = 0;
+  let timer = null;
+
+  cooldownBtn.addEventListener("click", () => {
+    if (cooldownActive) return;
+
+    cooldownActive = true;
+    remaining = 10 * 60; // 10 minutes
+
+    cooldownBtn.textContent = "Cooldown: 10:00";
+    note.textContent = "Nice. Step away from betting apps. Try: water + 10 deep breaths.";
+
+    timer = setInterval(() => {
+      remaining -= 1;
+      const m = String(Math.floor(remaining / 60)).padStart(2, "0");
+      const s = String(remaining % 60).padStart(2, "0");
+      cooldownBtn.textContent = `Cooldown: ${m}:${s}`;
+
+      if (remaining <= 0) {
+        clearInterval(timer);
+        cooldownActive = false;
+        cooldownBtn.textContent = "Start 10-min cooldown";
+        note.textContent = "Cooldown complete. If you still feel the urge, try another reset or contact support.";
+      }
+    }, 1000);
+  });
+
+  checkinBtn.addEventListener("click", () => {
+    note.textContent =
+      "Check-in idea: Rate urge (1–10), pick a trigger, and log what happened. Then choose a safer alternative.";
+  });
+
+  const form = $("waitlistForm");
+  const formNote = $("formNote");
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const email = $("email").value.trim();
+    if (!email) return;
+
+    // Demo-only: store locally (no backend)
+    const saved = JSON.parse(localStorage.getItem("betmaster_waitlist") || "[]");
+    if (!saved.includes(email)) saved.push(email);
+    localStorage.setItem("betmaster_waitlist", JSON.stringify(saved));
+
+    form.reset();
+    formNote.textContent = "You're on the list ✅ We’ll email you when the beta opens.";
+  });
+
+  $("year").textContent = new Date().getFullYear();
+}
+
+seedDemo();
+setupInteractions();
